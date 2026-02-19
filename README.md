@@ -1,3 +1,12 @@
+Note: This is a fork attempting to resolve issues with support for metadata v39 shortly after CPP2IL updated with support for such.
+
+Current issues after package wrangling:
+1. `AsmResolver.DotNet.TypeDefinition` no longer has a member `Module`. Potentially moved to `DeclaringModule`.
+2. `AsmResolver.DotNet.Code.Cil.CilMethodBody` no longer has constructor `(MethodDefinition)`, and appears to only have constructor `()`. Unclear what can be done about this; `static CilMethodBody.FromRawMethodBody(ModuleReaderContext, MethodDefinition, CilRawMethodBody, ICilOperandResolver)` doesn't appear to be a straightforwards replacement.
+
+
+Original README is preserved below.
+
 <p align="center">
     <img src="logo/logo_big.svg" width="300">
 </p>
